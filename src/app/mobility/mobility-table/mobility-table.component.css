@@ -1,0 +1,22 @@
+main {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.mobility-class {
+  margin: 20px;
+}
+
+.mobility-table {
+  table-layout: fixed;
+  width: 90%;
+}
+
+.mobility-table-header {
+  font-weight: bold;
+  text-align: center;
+}
+
+.mobility-table-header {
+  text-align: left;
+}
