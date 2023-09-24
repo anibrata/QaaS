@@ -1,0 +1,38 @@
+main {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.qradar-class {
+  margin: 20px;
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.qradar-table {
+  table-layout: fixed;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: large;
+  font-weight: bold;
+  width: 90%;
+  background-color: rgb(240, 240, 240);
+}
+
+.qradar-table-header {
+  font-weight: bold;
+  text-align: center;
+  text-align: left;
+}
+
+p {
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
+  }

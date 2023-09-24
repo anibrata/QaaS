@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(137, 194, 247);
+}
+
 * {
   font-family: Arial, Helvetica, sans-serif, Georgia, 'Times New Roman', Times, serif !important;
 }
@@ -11,20 +15,23 @@ header {
   font-size: 24pt;
   border-bottom: solid 2px rgb(0, 26, 51);
   color: #050e2e;
-  background-color: rgb(137, 194, 247);
+  background-color: rgb(190, 210, 230);
 }
 
-body {
-  background-color: rgb(137, 194, 247);
-}
 
-.main-tab-group {
+
+
+main-tab-group {
   margin-left: 10px;
   margin-right: 10px;
   padding: 5px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: large;
   font-weight: bold;
+  background-color: rgb(240, 240, 240);
+  .table-header {
+    background-color: rgb(169, 201, 216);
+  }
 }
 
 mat-tab-group {

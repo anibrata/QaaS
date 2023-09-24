@@ -74,6 +74,5 @@ const modules = [
   ],
 })
 
-export class IotModule {
+export class QradaroffenseModule {
 }
-  

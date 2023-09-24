@@ -19,6 +19,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MobilityTableComponent } from './mobility/mobility-table/mobility-table.component';
 import { MatSortModule } from '@angular/material/sort';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { QradarTableComponent } from './qradar/qradar-table/qradar-table.component';
 
 @NgModule({
   imports: [
@@ -38,7 +39,7 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     MatSortModule,
     MobilityModule
   ],
-  declarations: [AppComponent, MobilityTableComponent, IotTableComponent, DropdownComponent],//, ConfirmDialogComponent],
+  declarations: [AppComponent, MobilityTableComponent, IotTableComponent, DropdownComponent, QradarTableComponent],//, ConfirmDialogComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

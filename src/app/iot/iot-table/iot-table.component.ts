@@ -53,7 +53,7 @@ export class IotTableComponent implements AfterViewInit, OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.subscription = timer(0, 5000).pipe(
+        this.subscription = timer(0, 60000).pipe(
             switchMap(() => this.iotservice.getOffenses())
             ).subscribe((res: any) => {
             this.dataSource.data = res
