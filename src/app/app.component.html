@@ -10,40 +10,16 @@
 </header>
 
 <main>
-  <div class="mat-elevation-z8 main-tab-group">
+  <div>
     <!--<app-dropdown></app-dropdown>-->
-    <mat-tab-group>
-      <mat-tab label="DWave (QML)">
-        <app-iot-table></app-iot-table>
-      </mat-tab>
-      <!-- <mat-tab label="Smart Mobility">
-        <app-mobility-table></app-mobility-table>
-      </mat-tab> -->
-      <mat-tab label="QRadar">
+    <mat-tab-group class="mat-elevation-z8 main-tab-group">
+      <mat-tab label="Smart City Data (DWave and QRadar)">
         <app-qradar-table></app-qradar-table>
       </mat-tab>
-      <!--<mat-tab label="Hospital">
-        Content Hospital
-      </mat-tab>
-      <mat-tab label="Education">
-        Content Education
-      </mat-tab>
-      <mat-tab label="Energy">
-        Content Energy
-      </mat-tab>
-      <mat-tab label="Smart Environment">
-        Content Environment
-      </mat-tab>
-      <mat-tab label="Smart Economy">
-        Content Economy
-      </mat-tab>
-      <mat-tab label="Smart Government">
-        Content Government
-      </mat-tab>-->
     </mat-tab-group>
   </div>
 
-<!--<table mat-table matSort [dataSource]="dataSource">
+<!-- <table mat-table matSort [dataSource]="dataSource">
 
   <ng-container [matColumnDef]="col.key" *ngFor="let col of columnsSchema">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ col.label }}</th>
@@ -57,7 +33,7 @@
 <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]"
                  showFirstLastButtons
                  aria-label="Select Next or Back">
-</mat-paginator>-->
+</mat-paginator> -->
 
 <article>
   <!--<h3> Action Pointers </h3>

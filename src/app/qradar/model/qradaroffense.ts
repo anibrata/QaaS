@@ -2,45 +2,52 @@
 import { formatDate, formatTime } from "QradarTableComponent";
  */
 export interface QradarOffense {
-    id: number;
-    offense_source: string;
-    start_time: number;
-    magnitude: number;
-    attacktype: string;
+  [key: string]: any; // Add an index signature
+  id: string;
+  offense_source: string;
+  start_time: string;
+  magnitude: string;
+  data_source: string;
+  description: string
 }
 
 export const QradarOffenseColumns = [
   {
     key: 'id',
-    type: 'number',
+    type: 'string',
     label: 'Incident ID',
+    filterable: false,
   },
   {
     key: 'offense_source',
     type: 'string',
     label: 'Offense Source',
+    filterable: false,
   },
   {
     key: 'start_time',
-    type: 'number',
-    label: 'Incident Date',
+    type: 'string',
+    label: 'Incident Date & Time',
     /* formatFunction: formatDate, */
-  },
-  {
-    key: 'start_date', // Dummy key for referencing in the mat tab data table
-    type: 'number',
-    label: 'Incident Time',
-    /* formatter: (element: QradarOffense) => formatTime(element.start_time), */
+    filterable: true,
   },
   {
     key: 'magnitude',
-    type: 'number',
+    type: 'string',
     label: 'Severity (1-10)',
+    filterable: true,
   },
   {
     key: 'description',
     type: 'string',
     label: 'Attack Type',
+    filterable: true,
+  },
+  {
+    key: 'data_source',
+    type: 'string',
+    label: 'Data Source',
+    filterable: true,
   }
 ];
 

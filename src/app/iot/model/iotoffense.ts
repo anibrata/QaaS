@@ -1,41 +1,41 @@
 export interface IotOffense {
-    attackid: bigint;
-    attackdate: string;
-    attacktime: string;
-    severity: string;
-    categories: string;
-    attacktype: string;
+    id: string;
+    start_time: string;
+    description: string;
+    magnitude: string;
+    offense_source: string;
+    data_source: string;
 }
 
 export const IotOffenseColumns = [
     {
-      key: 'attackid',
-      type: 'bigint',
-      label: 'Incident ID',
+        key: 'id',
+        type: 'text',
+        label: 'Incident ID',
     },
     {
-      key: 'attackdate',
-      type: 'text',
-      label: 'Incident Date',
+        key: 'offense_source',
+        type: 'text',
+        label: 'Offense Source',
     },
     {
-      key: 'attacktime',
-      type: 'text',
-      label: 'Incident Time',
+        key: 'start_time',
+        type: 'text',
+        label: 'Incident Date & Time',
     },
     {
-      key: 'severity',
-      type: 'text',
-      label: 'Severity (1-10)',
+        key: 'magnitude',
+        type: 'text',
+        label: 'Severity (1-10)',
     },
     {
-      key: 'categories',
-      type: 'text',
-      label: 'Categories',
+        key: 'attacktype',
+        type: 'text',
+        label: 'Attack Type',
     },
     {
-      key: 'attacktype',
-      type: 'text',
-      label: 'Attack Type',
-    },
+        key: 'data_source',
+        type: 'text',
+        label: 'Data Source',
+    }
   ];

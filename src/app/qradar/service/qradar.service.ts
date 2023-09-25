@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class QradarService {
-  private serviceUrl = 'http://localhost:5000/offensejson';
+  private serviceUrl = 'http://localhost:5000/mergeddata';
   //private serviceUrl = 'http://localhost:5000/test';
 
   constructor(private http: HttpClient) {}
@@ -17,7 +17,7 @@ export class QradarService {
     return this.http
       .get(this.serviceUrl)
       .pipe<QradarOffense[]>(
-        map((data: any) => data.offensejson) // The object after data(~ type of data)
+        map((data: any) => data.mergeddata) // The object after data(~ type of data)
         // refers to the API endpoint. Should be exactly same as that in the
         // serviceUrl endpoint
         );

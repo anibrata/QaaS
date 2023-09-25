@@ -29,6 +29,7 @@ import { MatTabsModule} from '@angular/material/tabs';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatTooltipModule} from '@angular/material/tooltip';
 import { MatStepperModule} from '@angular/material/stepper';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const modules = [
   CdkTableModule,
@@ -68,6 +69,8 @@ const modules = [
   imports: [
     CommonModule,
     modules,
+    // Other imports
+    ReactiveFormsModule,
   ],
   exports: [
     modules,

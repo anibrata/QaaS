@@ -1,6 +1,29 @@
 main {
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.filter-field {
+  margin-left: 10px; /* Adjust the margin value as per your requirement */
+  margin-top: 10px;
+  width: 140px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  /* border: 2px solid #000; */
+}
+
+.filter-field input {
+  height: 20px; /* Adjust the height value as per your requirement */
+}
+
+.refresh-button{
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.reset-filter{
+  margin-right: 20px;
 }
 
 .qradar-class {
@@ -29,10 +52,11 @@ main {
   text-align: left;
 }
 
-p {
+.p {
   display: block;
   margin-top: 2em;
   margin-bottom: 2em;
   margin-left: 1em;
   margin-right: 1em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   }

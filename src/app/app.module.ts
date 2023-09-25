@@ -20,6 +20,7 @@ import { MobilityTableComponent } from './mobility/mobility-table/mobility-table
 import { MatSortModule } from '@angular/material/sort';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { QradarTableComponent } from './qradar/qradar-table/qradar-table.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -37,9 +38,12 @@ import { QradarTableComponent } from './qradar/qradar-table/qradar-table.compone
     MatPaginatorModule,
     MatTabsModule,
     MatSortModule,
-    MobilityModule
+    MobilityModule,
+    // Other imports
+    ReactiveFormsModule,
   ],
   declarations: [AppComponent, MobilityTableComponent, IotTableComponent, DropdownComponent, QradarTableComponent],//, ConfirmDialogComponent],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
