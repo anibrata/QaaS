@@ -1,6 +1,17 @@
 main {
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 60px;
+}
+
+.intro-text {
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif; /* Georgia, 'Times New Roman', Times, serif; */
+  font-size: 9pt;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px dotted rgb(0, 26, 51);
 }
 
 .filter-field {
@@ -11,35 +22,49 @@ main {
   display: flex;
   align-items: center;
   /* border: 2px solid #000; */
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
 }
 
 .filter-field input {
   height: 20px; /* Adjust the height value as per your requirement */
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
 }
 
 .refresh-button{
   margin-left: 20px;
   margin-top: 10px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 10pt;
 }
 
 .reset-filter{
   margin-right: 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 10pt;
 }
 
 .qradar-class {
-  margin: 20px;
+  /* margin: 20px;
   padding-left: 1px;
   padding-right: 1px;
   padding-top: 1px;
-  padding-bottom: 1px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-bottom: 1px; */
+  font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
   font-weight: bold;
 }
 
 .qradar-table {
   table-layout: fixed;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: large;
   font-weight: bold;
   width: 90%;
@@ -58,5 +83,26 @@ main {
   margin-bottom: 2em;
   margin-left: 1em;
   margin-right: 1em;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 10pt;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .left-button {
+    order: 1;
+    background-color: rgb(240, 240, 240);
+  }
+
+  .right-button {
+    order: 2;
+    background-color: rgb(240, 240, 240);
   }

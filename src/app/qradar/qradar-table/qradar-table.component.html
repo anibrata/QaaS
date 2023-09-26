@@ -1,12 +1,19 @@
 <main>
-  <article>
-    <p>Offense list for the data analyzed by DWave and QRadar</p>
+  <article class="intro-text">
+    <p>Offense list for the data analyzed by DWave and QRadar. The dashboard receives the data from both DWave QML interface and QRadar
+      and displays the data below. The provided filters can be used to view the data easily. The data columns can also be sorted in order
+      arrange the data in ascending or descending order for ease of viewing.
+    </p>
   </article>
-  <p>
+  <!-- <p>
     <button mat-raised-button class="refresh-button" (click)="refresh()">Refresh Table</button>
     <button mat-raised-button class="reset-filter" style="float: right;" (click)="clearFilterInput()">Reset Filter</button>
-  </p>
+  </p> -->
   <!--<button mat-raised-button color="accent" (click)="refresh()">Update Table</button>-->
+  <div class="button-container">
+    <button class="left-button" (click)="refresh()">Refresh Table</button>
+    <button class="right-button" (click)="clearFilterInput()">Reset Filter</button>
+  </div>
   <div class="mat-elevation-z8 qradar-class">
 
     <!--- The code below for mat table was commented and new code was added to make the columns to include functions that
