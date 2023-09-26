@@ -37,6 +37,7 @@ export class QradarTableComponent implements AfterViewInit, OnInit, OnDestroy {
   dataSource = new MatTableDataSource<QradarOffense>();
   valid: any = {};
   originalData: QradarOffense[] = [];
+  /* filterSubscription: Subscription | undefined; */
 
   filterForm: FormGroup; // Add a FormGroup for the filter controls
 
@@ -82,24 +83,32 @@ export class QradarTableComponent implements AfterViewInit, OnInit, OnDestroy {
     this.filterForm.valueChanges.pipe(
       debounceTime(300), // Add a debounce time to avoid frequent updates
       distinctUntilChanged() // Only update when the filter values change
-      ).subscribe(filters => {
-        // Apply the filters and update the data source
-        this.applyFilters(filters);
-      });
+    ).subscribe(filters => {
+      // Apply the filters and update the data source
+      this.applyFilters(filters);
+    });
 
-    /* this.subscription = timer(0, 60000).pipe(
+    /* this.subscription = timer(0, 3000).pipe(
       switchMap(() => this.qradarservice.getOffenses())
       ).subscribe((res: any) => {
         this.dataSource.data = res
     }); */
 
-    /* Load the data into the table when the page loads */
-    this.qradarservice.getOffenses().subscribe((res: any) => {
+    /* The below mentioned subscription is to refresh the mat-table  */
+    this.subscription = this.qradarservice.getOffenses().subscribe(
+      (res: any) => {
       this.dataSource.data = res;
     });
 
     // Get the original data
     this.originalData = this.dataSource.data;
+
+    /* this.filterSubscription = this.filterForm.valueChanges.subscribe(() => {
+      const filtersEmpty = Object.values(this.filterForm.value).every(value => !value);
+      if (filtersEmpty) {
+        this.loadAllData();
+      }
+    }); */
   }
 
   applyFilters(filters: any): QradarOffense[] {
@@ -122,57 +131,122 @@ export class QradarTableComponent implements AfterViewInit, OnInit, OnDestroy {
     // otherwise, refresh the table with the original data
     this.dataSource.data = areFiltersApplied ? filteredData : this.originalData;
 
-    // Reload the table if no text is present in the filter after a delay of 0 ms
-    if (!areFiltersApplied) {
+    // Reload the table if no text is present in the filter after a delay of 1ms
+    /* if (!areFiltersApplied) {
       setTimeout(() => {
-        // Update the data source with the filtered data
-        const isFilterTextEmpty = Object.values(filters).every(filterValue => filterValue === '');
-        if (isFilterTextEmpty) {
-          this.dataSource.data = this.originalData;
-          }
-      ''}, 0);
-      /* // Clear filter input values
-      this.clearFilterInput();
-      }, 0); */
-    }
+      // Update the data source with the filtered data
+      const isFilterTextEmpty = Object.values(filters).every(filterValue => filterValue === '');
+      if (isFilterTextEmpty) {
+        this.dataSource.data = this.originalData;
+      }
+    ''}, 1);
+    } */
     return this.dataSource.data
   }
 
-  clearFilterInput() {
-    Object.keys(this.filterForm.controls).forEach(key => {
-      this.filterForm.controls[key].reset();
+  /* applyFilters(filters: any): QradarOffense[] {
+    // Filter the data based on the filter values
+    const filteredData = this.originalData.filter(data => {
+      return Object.keys(filters).every(key => {
+        const filterValue = filters[key].toLowerCase();
+        const dataValue = String(data[key]).toLowerCase();
+
+        if (filterValue === '') {
+          return true; // Skip filtering if the filter value is empty
+        }
+
+        return dataValue.includes(filterValue);
+      });
     });
-    this.refreshTable();
-  }
+
+    return filteredData;
+  } */
+
+  /* applyFilters(filters: any): QradarOffense[] {
+    let filteredData = [...this.dataSource.data];
+
+    Object.keys(filters).forEach(key => {
+      const filterValue = filters[key].toLowerCase();
+      if (filterValue) {
+        filteredData = filteredData.filter(data => {
+          const dataValue = String(data[key]).toLowerCase();
+          return dataValue.includes(filterValue);
+        });
+      }
+    });
+
+    return filteredData;
+  } */
+
+  /* applyFilters(filters: any): QradarOffense[] {
+    const filterKeys = Object.keys(filters);
+    if (filterKeys.length === 0) {
+      return this.dataSource.data; // Return original data if no filters are applied
+    }
+
+    return this.dataSource.data.filter(data => {
+      return filterKeys.every(key => {
+        const filterValue = filters[key].toLowerCase();
+        const dataValue = String(data[key]).toLowerCase();
+        return dataValue.includes(filterValue);
+      });
+    });
+  } */
 
   getFilterControl(columnKey: string): FormControl {
     return this.filterForm.get(columnKey) as FormControl;
   }
 
-  refreshTable() {
-    this.qradarservice.getOffenses().subscribe((res: any) => {
-      this.dataSource.data = res;
-    });
-  }
-
   // The below mentioned function is for the implementation of
   // a refresh button to update the Material Table.
   refresh() {
-    // Clear filter input values
-    this.clearFilterInput();
+    /* this.clearFilter(); */
     this.qradarservice.getOffenses().subscribe((res: QradarOffense[])=> {
       this.dataSource.data = res;
       });
-
-    // Fetch offenses data
-    /* this.qradarservice.getOffenses().subscribe((res: QradarOffense[]) => {
-      this.originalData = res; // Store the original data
-      this.dataSource.data = res; // Set the data source with the fetched offenses
-    }); */
   }
 
   ngOnDestroy() {
-      this.subscription.unsubscribe();
+    this.subscription.unsubscribe();
+    /* if (this.filterSubscription) {
+      this.filterSubscription.unsubscribe();
+    } */
+  }
+
+  /* Clears filter - used inside refresh table */
+  clearFilter() {
+    Object.keys(this.filterForm.controls).forEach(key => {
+      this.filterForm.controls[key].setValue('');
+    });
+  }
+
+  /* Clears filter - Calls refresh table at the end */
+  /* clearFilterInput() {
+    Object.keys(this.filterForm.controls).forEach(key => {
+      this.filterForm.controls[key].setValue('');
+    }); */
+    /* this.refresh();
+    // Add the line below to load the original data into the table
+    // Get the original data
+    // this.dataSource.data = this.originalData;
+    this.qradarservice.getOffenses().subscribe((res: QradarOffense[])=> {
+      this.dataSource.data = res;
+      }); */
+  //}
+
+  clearFilterInput() {
+    for (const controlName in this.filterForm.controls) {
+      if (this.filterForm.controls.hasOwnProperty(controlName)) {
+        this.filterForm.controls[controlName].setValue('');
+      }
+    }
+  }
+
+  loadAllData() {
+    // Fetch all data and update the table
+    this.qradarservice.getOffenses().subscribe((res: any) => {
+      this.dataSource.data = res;
+    });
   }
 
   // Format the value of the column as date

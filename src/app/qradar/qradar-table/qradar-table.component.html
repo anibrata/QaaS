@@ -1,17 +1,14 @@
 <main>
-  <!-- <article>
+  <article>
     <p>Offense list for the data analyzed by DWave and QRadar</p>
-  </article> -->
+  </article>
   <p>
     <button mat-raised-button class="refresh-button" (click)="refresh()">Refresh Table</button>
     <button mat-raised-button class="reset-filter" style="float: right;" (click)="clearFilterInput()">Reset Filter</button>
   </p>
+  <!--<button mat-raised-button color="accent" (click)="refresh()">Update Table</button>-->
   <div class="mat-elevation-z8 qradar-class">
-    <!-- <button (click)="refreshTable()" class="tab-button">Refresh Table</button> -->
-    <!-- <mat-button-toggle-group>
-      <mat-button-toggle value="qradar">QRadar</mat-button-toggle>
-    </mat-button-toggle-group> -->
-    <!-- Change the above line into mat button to refresh the table -->
+
     <!--- The code below for mat table was commented and new code was added to make the columns to include functions that
     transform the values of the table;
     The change was taken care of inside the API itself and hence no change was needed -->
