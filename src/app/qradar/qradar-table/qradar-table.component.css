@@ -3,14 +3,21 @@ main {
   padding-bottom: 60px;
 }
 
+.intro {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+}
+
 .intro-text {
   padding-left: 5px;
   padding-right: 5px;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif; /* Georgia, 'Times New Roman', Times, serif; */
-  font-size: 10pt;
+  font-size: 11pt;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
   border: 1px dotted rgb(0, 26, 51);
 }
 
@@ -20,9 +27,9 @@ main {
   width: 140px;
   height: 60px;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   /* border: 2px solid #000; */
-  text-align: center;
+  /* text-align: right; */
   font-family: Arial, Helvetica, sans-serif;
   font-size: 10pt;
 }
@@ -51,30 +58,69 @@ main {
   font-size: 10pt;
 }
 
-.qradar-class {
-  /* margin: 20px;
-  padding-left: 1px;
-  padding-right: 1px;
-  padding-top: 1px;
-  padding-bottom: 1px; */
+caption {
+  caption-side: top;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: medium;
+  font-size: 15pt;
+  padding-bottom: 15px;
+  color: rgb(0, 30, 50);
+}
+
+.mat-elevation-z8.qradar-class {
+  /* margin: 20px;*/
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* font-family: 'Courier New', Courier, monospace;*/
+  font-size: 11pt;
   font-weight: bold;
+  color: rgb(0, 40, 70);
 }
 
 .qradar-table {
   table-layout: fixed;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: large;
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-size: 11pt;
   font-weight: bold;
   width: 90%;
   background-color: rgb(240, 240, 240);
+  border: 1px solid;
+  border-color: rgb(0, 30, 50);
+  color: rgb(0, 30, 50);
 }
 
+
 .qradar-table-header {
-  font-weight: bold;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  font-size: 11.5pt;
+  color: rgb(0, 30, 50);
+/*   border: 1px solid;
+  border-collapse: collapse; */
+  border-bottom: 1px solid;
+  border-color: rgb(0, 30, 50);
+}
+
+.qradar-table-cell {
   text-align: left;
+  color: rgb(0, 50, 90);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  font-size: 11.5pt;
+}
+
+.mpaginator {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  background-color: rgb(240, 240, 240);
+  border-right: 1px solid;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  border-color: rgb(0, 30, 50);
 }
 
 .p {
@@ -86,23 +132,23 @@ main {
   font-family: Arial, Helvetica, sans-serif;
   }
 
-  .button-container {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 10pt;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 11.5pt;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
-  .left-button {
-    order: 1;
-    background-color: rgb(240, 240, 240);
-  }
+.left-button {
+  order: 1;
+  background-color: rgb(240, 240, 240);
+}
 
-  .right-button {
-    order: 2;
-    background-color: rgb(240, 240, 240);
-  }
+.right-button {
+  order: 2;
+  background-color: rgb(240, 240, 240);
+}

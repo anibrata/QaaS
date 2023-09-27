@@ -16,6 +16,7 @@ header {
   border-bottom: solid 2px rgb(0, 26, 51);
   color: #050e2e;
   background-color: rgb(190, 210, 230);
+  color: rgb(0, 30, 50);
 }
 
 /* .mat-elevation-z8.main-tab-group {
@@ -23,17 +24,21 @@ header {
   padding-right: 10;
 } */
 
-.mat-tab-group.main-tab-group {
+/* .mat-tab-group.main-tab-group {
   .mat-tab-label {
     font-family: Arial, sans-serif;
     font-size: 24px;
   }
-  .sstab {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 10pt;
-  }
+} */
+
+.scdata {
+  text-align: center;
+  font-family:'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 12pt;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .mat-elevation-z8.main-tab-group ::ng-deep .mat-tab-label {

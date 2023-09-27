@@ -1,6 +1,8 @@
 <main>
-  <article class="intro-text">
-    <p>Offense list for the data analyzed by DWave and QRadar. The dashboard receives the data from both DWave QML interface and QRadar
+  <article class="intro">
+    <p class="intro-text">The Integrated Security Dashboard for Smart City displays various offenses/inttrusions encountered in Smart City data.
+      Offense list for the data analyzed by DWave and QRadar are displayed below in a tabular manner for ready reference.
+      The dashboard receives the data from both DWave QML interface and QRadar
       and displays the data below. The provided filters can be used to view the data easily. The data columns can also be sorted in order
       arrange the data in ascending or descending order for ease of viewing.
     </p>
@@ -10,12 +12,8 @@
     <button mat-raised-button class="reset-filter" style="float: right;" (click)="clearFilterInput()">Reset Filter</button>
   </p> -->
   <!--<button mat-raised-button color="accent" (click)="refresh()">Update Table</button>-->
-  <div class="button-container">
-    <button class="left-button" (click)="refresh()">Refresh Table</button>
-    <button class="right-button" (click)="clearFilterInput()">Reset Filter</button>
-  </div>
-  <div class="mat-elevation-z8 qradar-class">
 
+  <div class="mat-elevation-z8 qradar-class">
     <!--- The code below for mat table was commented and new code was added to make the columns to include functions that
     transform the values of the table;
     The change was taken care of inside the API itself and hence no change was needed -->
@@ -28,6 +26,7 @@
       [dataSource]="dataSource"
       class="qradar-table"
     >
+    <caption>Smart City Offense Data</caption>
 
       <ng-container [matColumnDef]="col.key" *ngFor="let col of columnsSchema">
         <th
@@ -86,8 +85,13 @@
 
     <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]"
                     showFirstLastButtons
-                    aria-label="Select Next or Back">
+                    aria-label="Select Next or Back" class="mpaginator">
     </mat-paginator>
+
+    <div class="button-container">
+      <button class="left-button" (click)="refresh()">Refresh Table</button>
+      <button class="right-button" (click)="clearFilterInput()">Reset Filter</button>
+    </div>
 
   </div>
 
